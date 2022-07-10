@@ -4,6 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Banner from 'components/ui/Banner';
 
 import { SectionTitle } from 'helpers/definitions';
+import FormatHtml from "components/utils/FormatHtml";
 
 interface SectionHeroBanner extends SectionTitle {
   content: string;
@@ -11,8 +12,14 @@ interface SectionHeroBanner extends SectionTitle {
   linkText: string;
 }
 
+interface SummaryBanner {
+  node: {
+    html: React.ReactNode;
+  };
+}
+
 const HeroBanner: React.FC = () => {
-  const { markdownRemark } = useStaticQuery(graphql`
+  const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
     query {
       markdownRemark(frontmatter: { category: { eq: "hero section" } }) {
         frontmatter {
@@ -23,16 +30,32 @@ const HeroBanner: React.FC = () => {
           linkText
         }
       }
+      allMarkdownRemark(
+        filter: { frontmatter: { category: { eq: "hero section" } } }
+      ) {
+        edges {
+          node {
+            html
+          }
+        }
+      }
     }
   `);
 
   const heroBanner: SectionHeroBanner = markdownRemark.frontmatter;
+  const html: SummaryBanner = allMarkdownRemark.edges[0];
 
   return (
     <Banner
       title={heroBanner.title}
       subtitle={heroBanner.subtitle}
-      content={heroBanner.content}
+      content={
+        <>
+          <FormatHtml className="" content={heroBanner.content} />
+          <br/>
+          <FormatHtml className="styled-list" content={html.node.html} />
+        </>
+      }
       linkTo={heroBanner.linkTo}
       linkText={heroBanner.linkText}
     />

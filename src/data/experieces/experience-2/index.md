@@ -1,15 +1,15 @@
 ---
 category: 'experiences'
-company: 'Patient Platform Limited'
+company: 'EMIS-X Analytics'
 group: 'EMIS Health'
-position: 'SDET'
+position: 'Full-stack Java Developer | Senior SDE | Senior Consultant'
 startDate: 'Aug 2017'
-endDate: 'Feb 2019'
+endDate: 'Present'
 ---
 
-- The architect for test case centric modularized framework using Java, Spring framework which helps Web, Mobile, and API automation for functional and performance testing.
-- Identify and develop new automation tools and approaches that will increase quality, development velocity, and decrease the testing cost
-- Work with product owners, system architects, developers and involve in requirement analysis and contribute to product improvement
-- Manage and provide oversight for the deployment of releases into production environments
-- Design and build the automated test frameworks and test suites for use in development and testing cycles
-- Building test suites for Web, API and Mobile platforms and enable automated CI pipelines
+- Designed and developed containerized Springboot ReST API backends. Deployed them in ECS with Loadbalancers and API Gateway
+- Developed ReactJS based SPA, hosted in AWS S3 buckets and served through Cloudfront CDN and Edge Lambda
+- Created infrastructure with CDK, adopted complete CI/CD throughout the development life cycle
+- Lead a team of 4 members with Jira, followed Agile methodologies and Sprint model
+- Took ownership of the product by proposing and implementing solutions like Okta integration, WAF
+- Actively involved in the Agile scrum methodology with close collaboration with team members

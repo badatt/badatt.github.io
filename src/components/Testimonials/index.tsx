@@ -47,7 +47,6 @@ const Testimonials: React.FC = () => {
             frontmatter {
               title
               linkedin
-              linkedinProfilePhoto
               cover {
                 childImageSharp {
                   fluid(maxWidth: 80) {
@@ -74,13 +73,13 @@ const Testimonials: React.FC = () => {
             const {
               id,
               html,
-              frontmatter: { cover, title, linkedin, linkedinProfilePhoto }
+              frontmatter: { cover, title, linkedin }
             } = item.node;
 
             return (
               <Styled.Testimonial key={id}>
                 <Styled.Image>
-                  <a href={linkedin} target="_blank"><img src={linkedinProfilePhoto} alt={title}/></a>
+                  <a href={linkedin} target="_blank"><Img fluid={cover.childImageSharp.fluid} alt={title}/></a>
                 </Styled.Image>
                 <Styled.Title>{title}</Styled.Title>
                 <FormatHtml className="p-sm" content={html} />
