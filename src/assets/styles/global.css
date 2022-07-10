@@ -10,14 +10,14 @@
   padding-left: 1.2rem;
 }
 
-.styled-list li {
+.styled-list>ul>li {
   position: relative;
   list-style-type: none;
   padding-left: 1rem;
   margin-bottom: 0.5rem;
 }
 
-.styled-list li:before {
+.styled-list>ul>li:before {
   content: '';
   display: block;
   position: absolute;
