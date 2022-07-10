@@ -4,7 +4,7 @@ title: 'Full-stack Java Developer . Senior SDE . Senior Consultant'
 subtitle: 'EMIS Health'
 content: 'A passionate software engineer with over 8 years of work experience in designing, developing, and maintaining complex software systems. I have good hands-on experience in developing backend APIs with Java, Springboot, and React-based SPA on AWS Cloud. I seek to exploit my deftness in full-stack cloud-based web apps. I like to reduce the fuzz and keep it a clean and clear attitude. I prefer quality to quantity.'
 linkTo: '/resume/'
-linkText: 'View My Profile'
+linkText: 'View my profile'
 ---
 
 - Experience in developing robust JVM (Java & Kotlin) based ReST APIs using Springboot, containerizing them using Docker and publish to ECR, deploying them later in ECS
