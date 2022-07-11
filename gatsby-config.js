@@ -54,12 +54,12 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-postcss`,
     `gatsby-plugin-tailwindcss`,
-    {
+    /*{
       resolve: `gatsby-plugin-purgecss`,
       options: {
         tailwind: true,
         purgeOnly: [`src/assets/styles/global.css`],
       },
-    },
+    },*/
   ],
 };
