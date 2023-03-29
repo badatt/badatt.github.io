@@ -5,11 +5,13 @@ import Banner from 'components/ui/Banner';
 
 import { SectionTitle } from 'helpers/definitions';
 import FormatHtml from "components/utils/FormatHtml";
+import {calculateExperience} from "../../helpers/utils";
 
 interface SectionHeroBanner extends SectionTitle {
   content: string;
   linkTo: string;
   linkText: string;
+  dataOfJoining: string;
 }
 
 interface SummaryBanner {
@@ -28,6 +30,7 @@ const HeroBanner: React.FC = () => {
           content
           linkTo
           linkText
+          dataOfJoining
         }
       }
       allMarkdownRemark(
@@ -44,6 +47,7 @@ const HeroBanner: React.FC = () => {
 
   const heroBanner: SectionHeroBanner = markdownRemark.frontmatter;
   const html: SummaryBanner = allMarkdownRemark.edges[0];
+  heroBanner.content = heroBanner.content.replace("{{experience}}", `${calculateExperience(heroBanner.dataOfJoining)}`)
 
   return (
     <Banner

@@ -1,6 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
+import {SectionTitle} from "../../helpers/definitions";
+import {calculateExperience} from "../../helpers/utils";
 
 type Meta =
   | {
@@ -19,8 +21,15 @@ interface Props {
   title: string;
 }
 
+interface MetaBanner extends SectionTitle {
+  content: string;
+  linkTo: string;
+  linkText: string;
+  dataOfJoining: string;
+}
+
 const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
-  const { site } = useStaticQuery(
+  const { site, markdownRemark } = useStaticQuery(
     graphql`
       query {
         site {
@@ -30,11 +39,22 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
             author
           }
         }
+        markdownRemark(frontmatter: { category: { eq: "hero section" } }) {
+          frontmatter {
+            title
+            subtitle
+            content
+            linkTo
+            linkText
+            dataOfJoining
+          }
+        }
       }
     `
   );
 
-  const metaDescription = description || site.siteMetadata.description;
+  const metaBanner: MetaBanner = markdownRemark.frontmatter;
+  metaBanner.content = metaBanner.content.replace("{{experience}}", `${calculateExperience(metaBanner.dataOfJoining)}`)
 
   return (
     <Helmet
@@ -46,7 +66,7 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
       meta={[
         {
           name: `description`,
-          content: metaDescription
+          content: metaBanner.content
         },
         {
           property: `og:title`,
@@ -54,7 +74,7 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
         },
         {
           property: `og:description`,
-          content: metaDescription
+          content: metaBanner.content
         },
         {
           property: `og:type`,
@@ -74,7 +94,7 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
         },
         {
           name: `twitter:description`,
-          content: metaDescription
+          content: metaBanner.content
         }
       ].concat(meta!)}
     />
