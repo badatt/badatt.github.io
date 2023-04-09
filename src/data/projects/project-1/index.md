@@ -7,5 +7,5 @@ details: 'A clone of youtube web home page, just made for fun. Nothing is really
 publishedAt: '2021-06-22T021:01:02Z'
 duration: '14 Hours'
 tech: 'React+AWS Cloudfront+S3'
-link: 'https://badatt.dev/youtube-clone/index.html'
+link: 'https://klone.badatt.dev/youtube/'
 ---
