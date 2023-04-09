@@ -2,8 +2,8 @@ import React from 'react';
 import _ from 'lodash';
 import { useStaticQuery, graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import momnent from 'moment';
-import TimeAgo from 'javascript-time-ago';
+import moment from 'moment';
+import TimeAgo, { Locale } from 'javascript-time-ago';
 import en from 'javascript-time-ago/locale/en';
 import Container from 'components/ui/Container';
 import TitleSection from 'components/ui/TitleSection';
@@ -35,7 +35,7 @@ interface Project {
 
 const Projects: React.FC = () => {
   TimeAgo.addLocale(en);
-  const timeAgo = new TimeAgo();
+  const timeAgo = new TimeAgo("en");
   const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
     query {
       markdownRemark(frontmatter: { category: { eq: "projects section" } }) {
@@ -72,15 +72,15 @@ const Projects: React.FC = () => {
 
   const sectionTitle: SectionTitle = markdownRemark.frontmatter;
   const projects: Project[] = allMarkdownRemark.edges;
-  const { clone } = _.groupBy(projects, 'node.frontmatter.projectType');
+  const { frontend } = _.groupBy(projects, 'node.frontmatter.projectType');
 
   return (
     <Container section>
       <TitleSection title={sectionTitle.title} subtitle={sectionTitle.subtitle} center />
       <div className="w-full">
-        <h3 className="project-type uppercase mb-4 text-sm font-bold w-full text-left">Clones</h3>
-        <div className="flex flex-wrap">
-          {clone.map((item) => {
+        <h3 className="project-type uppercase mb-4 text-sm font-bold w-full text-left">frontend</h3>
+        <div className="flex flex-wrap gap-4">
+          {frontend.map((item) => {
             const {
               id,
               frontmatter: { title, details, publishedAt, duration, tech, link, cover },
@@ -88,15 +88,15 @@ const Projects: React.FC = () => {
 
             return (
               <a key={id} href={link} target="_blank" className="project-card flex flex-col rounded-md shadow-md">
-                <div className="project-img relative ">
-                  <Img fluid={cover.childImageSharp.fluid} alt={title} fadeIn />
+                <div className="project-img relative">
+                  <Img fluid={cover.childImageSharp.fluid} alt={title} fadeIn style={{zIndex: -1}}/>
                   <h4 className="bg-gradient-to-t">{title}</h4>
                 </div>
                 <div className="project-content flex flex-col">
                   <div className="project-details">{details}</div>
                   <div className="project-stats flex items-center">
                     <div className="project-published">
-                      {timeAgo.format(momnent(publishedAt, 'YYYY-MM-DDTHH:mm:ssZ').toDate())}
+                      {timeAgo.format(moment(publishedAt, 'YYYY-MM-DDTHH:mm:ssZ').toDate())}
                     </div>
                     <div>ETA {duration}</div>
                   </div>

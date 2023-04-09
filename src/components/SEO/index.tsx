@@ -35,7 +35,6 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
         site {
           siteMetadata {
             title
-            description
             author
           }
         }
