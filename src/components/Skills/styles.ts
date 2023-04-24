@@ -88,7 +88,7 @@ export const SkillItem = styled.span`
   border-width: 1px;
   padding: 0.4em 0.8em;
   border-radius: 2rem;
-  font-size: ${({ s }) => `${Math.sqrt(s) / 7}rem`};
+  font-size: ${({ s }) => `${Math.sqrt(s * 2.5) / 14}rem`};
   margin: 5px 5px 3px 0;
 
   :hover {

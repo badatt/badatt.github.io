@@ -1,10 +1,11 @@
 ---
 category: 'experiences'
 company: 'Tata Consultancy Services'
-group: ''
+group: 'CoE'
 position: 'Automation Engineer'
 startDate: 'Jan 2014'
 endDate: 'Jul 2017'
+main: true
 ---
 
 - Technical consultation on Automation

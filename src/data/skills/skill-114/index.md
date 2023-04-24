@@ -1,6 +1,6 @@
 ---
 category: 'skills'
-title: 'Selenium'
+title: 'DDD'
 quandrant: 'backend'
-percentage: 60
+percentage: 70
 ---

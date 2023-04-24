@@ -18,6 +18,7 @@ interface Experience {
       position: string;
       startDate: string;
       endDate: string;
+      main: boolean;
     };
   };
 }
@@ -45,6 +46,7 @@ const Experience: React.FC = () => {
               position
               startDate
               endDate
+              main
             }
           }
         }
@@ -63,7 +65,7 @@ const Experience: React.FC = () => {
         const {
           id,
           html,
-          frontmatter: { company, group, position, startDate, endDate }
+          frontmatter: { company, group, position, startDate, endDate, main },
         } = item.node;
 
         return (
@@ -75,6 +77,7 @@ const Experience: React.FC = () => {
             content={<FormatHtml className="styled-list" content={html} />}
             startDate={startDate}
             endDate={endDate}
+            main={main}
           />
         );
       })}
