@@ -1,6 +1,6 @@
 ---
 category: 'contact'
-title: 'Phone'
-icon: 'phone'
-content: '+91 94930 24060'
+title: 'Address'
+icon: 'map-marker-alt'
+content: 'Radiance Mercury, Perumbakkam, Chennai 600100'
 ---

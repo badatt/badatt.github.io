@@ -1,6 +1,6 @@
 ---
 category: 'contact'
-title: 'Address'
-icon: 'map-marker-alt'
-content: 'Radiance Mercury, Perumbakkam, Chennai 600100'
+title: 'Email'
+icon: 'paper-plane'
+content: 'dev.badatt@gmail.com'
 ---
