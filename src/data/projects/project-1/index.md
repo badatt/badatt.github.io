@@ -7,5 +7,5 @@ details: 'Tidy UI is a family of micro components primarily focused on building 
 publishedAt: '2022-08-01T000:00:02Z'
 duration: '1 year'
 tech: 'React+Styled Components'
-link: 'https://tidy-ui.badatt.dev'
+link: 'https://beta.tidy-ui.com'
 ---
