@@ -47,4 +47,26 @@ const Layout: React.FC<Props> = ({ children }) => {
   );
 };
 
+const LayoutEmpty: React.FC<Props> = ({ children }) => {
+  return (
+    <>
+      <GlobalStyles />
+      <AnimatePresence exitBeforeEnter>
+        <Styled.Layout>
+          <motion.div
+            initial={{ y: 30, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            {children}
+          </motion.div>
+        </Styled.Layout>
+      </AnimatePresence>
+    </>
+  );
+};
+
+export { LayoutEmpty };
+
 export default Layout;
