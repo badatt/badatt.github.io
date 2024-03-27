@@ -6,15 +6,23 @@ category: 'pd'
 | ---------------- | ------------------ |
 | Name             | Balu Praveen Datty |
 | Date of birth    | 22 April 1992      |
-| Zodiac sign      |                    |
+| జన్మ నక్షత్రం        | మూల                 |
+| నక్షత్ర పాదము        | 3వ పాదము             |
+| జన్మ రాశి           | ధను రాశి              |
 | Height           | 5 Ft. 8 in.        |
 | Weight           | 90 Kg              |
-| Skin tone        | white              |
-| Hair color       | black              |
+| Skin tone        | White              |
+| Hair color       | Black              |
 
 
-| Professional details |                   |
-| -------------------- | ----------------- |
-| Occupation           | Software Engineer |
-| Designation          | Tech Lead         |
-| Package              | 23 LPA            |
+| Professional details |                                   |
+| -------------------- | --------------------------------- |
+| Company              | EMIS Health (United Health Group) |
+| Occupation           | Software Engineer                 |
+| Designation          | Tech Lead                         |
+| Location             | Chennai                           |
+| Onsite               | London, Leeds                     |
+
+| Education details |     |                          |
+| ----------------- | --- | ------------------------ |
+| B Tech            | EEE | RVR & JC College, Guntur |
