@@ -2,17 +2,19 @@
 category: 'pd'
 ---
 
-| Personal details |                    |
-| ---------------- | ------------------ |
-| Name             | Balu Praveen Datty |
-| Date of birth    | 22 April 1992      |
-| జన్మ నక్షత్రం        | మూల                 |
-| నక్షత్ర పాదము        | 3వ పాదము             |
-| జన్మ రాశి           | ధను రాశి              |
-| Height           | 5 Ft. 8 in.        |
-| Weight           | 90 Kg              |
-| Skin tone        | White              |
-| Hair color       | Black              |
+| Personal details |              |
+| ---------------- | ------------ |
+| పేరు               | బాలు ప్రవీణ్ దత్తి  |
+| పుట్టిన తేది          | 22 ఏప్రిల్ 1992 |
+| జన్మ నక్షత్రం        | మూల           |
+| నక్షత్ర పాదము        | 3వ పాదము       |
+| జన్మ రాశి           | ధను రాశి        |
+| కమ్యూనిటీ            | కొప్పుల వెలమ     |
+| సొంత ఊరు            | చినభోగిలి        |
+| నివాసం              | బొబ్బిలి         |
+| Height           | 5 Ft. 8 in.  |
+| Weight           | 90 Kg        |
+| Skin tone        | White        |
 
 
 | Professional details |                                   |
@@ -26,3 +28,15 @@ category: 'pd'
 | Education details |     |                          |
 | ----------------- | --- | ------------------------ |
 | B Tech            | EEE | RVR & JC College, Guntur |
+
+| Family details |            |                                 |
+| -------------- | ---------- | ------------------------------- |
+| Father         | పేరు         | దత్తి శివరాం నాయుడు                     |
+|                | Occupation | Teacher (LFL HM)                |
+|                | Location   | SRNC, రామభద్రపురం                   |
+| Mother         | పేరు         | మూడడ్ల సుజాత                        |
+|                | Occupation | Teacher                         |
+|                | Location   | YRNC, రామభద్రపురం                   |
+| Brother        | పేరు         | దత్తి గౌతం                          |
+|                | Occupation | ATC, Airport Authority of India |
+|                | Location   | గన్నవరం ఎయిర్పోర్ట్                    |
