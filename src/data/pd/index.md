@@ -23,6 +23,7 @@ category: 'pd'
 | Occupation           | Software Engineer                 |
 | Designation          | Tech Lead                         |
 | Location             | Chennai                           |
+| Package              | 23 LPA                            |
 | Onsite               | London, Leeds                     |
 
 | Education details |     |                          |
