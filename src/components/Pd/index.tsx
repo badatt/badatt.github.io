@@ -13,7 +13,7 @@ interface IPd {
 }
 
 const Pd: React.FC = () => {
-  const { allMarkdownRemark, profile1, profile2, profile3, profile4 } = useStaticQuery(graphql`
+  const { allMarkdownRemark, profile1, profile2, profile3 } = useStaticQuery(graphql`
     {
       allMarkdownRemark(filter: { frontmatter: { category: { eq: "pd" } } }) {
         edges {
@@ -43,13 +43,6 @@ const Pd: React.FC = () => {
           }
         }
       }
-      profile4: file(relativePath: { eq: "profile-4.jpg" }) {
-        childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
     }
   `);
 
@@ -57,7 +50,6 @@ const Pd: React.FC = () => {
   const profilePic1: ImageSharpFluid = profile1.childImageSharp.fluid;
   const profilePic2: ImageSharpFluid = profile2.childImageSharp.fluid;
   const profilePic3: ImageSharpFluid = profile3.childImageSharp.fluid;
-  const profilePic4: ImageSharpFluid = profile4.childImageSharp.fluid;
 
   return (
     <>
@@ -65,7 +57,6 @@ const Pd: React.FC = () => {
         <Img fluid={profilePic1} />
         <Img fluid={profilePic2} />
         <Img fluid={profilePic3} />
-        <Img fluid={profilePic4} />
       </Styled.Images>
       <Styled.Details>
         <FormatHtml className="pd" content={html.node.html} />
