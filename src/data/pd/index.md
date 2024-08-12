@@ -28,6 +28,7 @@ category: 'pd'
 
 | Education details |     |                          |
 | ----------------- | --- | ------------------------ |
+| PGDCA            | Computer Applications | Annamalai University, Chennai |
 | B Tech            | EEE | RVR & JC College, Guntur |
 
 | Family details |            |                                 |
