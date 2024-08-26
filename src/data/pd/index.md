@@ -38,7 +38,7 @@ category: 'pd'
 |                | Location   | SRNC, రామభద్రపురం                   |
 | Mother         | పేరు         | మూడడ్ల సుజాత                        |
 |                | Occupation | Teacher                         |
-|                | Location   | YRNC, రామభద్రపురం                   |
+|                | Location   | YHC, రామభద్రపురం                   |
 | Brother        | పేరు         | దత్తి గౌతం                          |
 |                | Occupation | ATC, Airport Authority of India |
 |                | Location   | గన్నవరం ఎయిర్పోర్ట్                    |
