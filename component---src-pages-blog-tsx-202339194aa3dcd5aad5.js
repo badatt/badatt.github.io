@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[10],{"1GPU":function(e,a,t){"use strict";t.r(a);var n=t("q1tI"),l=t.n(n),o=t("VXBa"),i=t("6o60");a.default=()=>l.a.createElement(o.a,null,l.a.createElement(i.a,{title:"Blog"}),"//TODO Blog page implementation")}}]);
+//# sourceMappingURL=component---src-pages-blog-tsx-202339194aa3dcd5aad5.js.map
