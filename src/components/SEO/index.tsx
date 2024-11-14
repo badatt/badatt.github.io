@@ -22,7 +22,7 @@ interface Props {
 }
 
 interface MetaBanner extends SectionTitle {
-  content: string;
+  summary: string;
   linkTo: string;
   linkText: string;
   dataOfJoining: string;
@@ -42,7 +42,7 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
           frontmatter {
             title
             subtitle
-            content
+            summary
             linkTo
             linkText
             dataOfJoining
@@ -53,7 +53,7 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
   );
 
   const metaBanner: MetaBanner = markdownRemark.frontmatter;
-  metaBanner.content = metaBanner.content.replace("{{experience}}", `${calculateExperience(metaBanner.dataOfJoining)}`)
+  metaBanner.summary = metaBanner.summary.replace("{{experience}}", `${calculateExperience(metaBanner.dataOfJoining)}`)
 
   return (
     <Helmet
@@ -65,7 +65,7 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
       meta={[
         {
           name: `description`,
-          content: metaBanner.content
+          content: metaBanner.summary
         },
         {
           property: `og:title`,
@@ -73,7 +73,7 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
         },
         {
           property: `og:description`,
-          content: metaBanner.content
+          content: metaBanner.summary
         },
         {
           property: `og:type`,
@@ -93,7 +93,7 @@ const SEO: React.FC<Props> = ({ description, lang, meta, title }) => {
         },
         {
           name: `twitter:description`,
-          content: metaBanner.content
+          content: metaBanner.summary
         }
       ].concat(meta!)}
     />

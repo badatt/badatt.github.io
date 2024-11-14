@@ -1,68 +1,55 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-
-import Banner from 'components/ui/Banner';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 
 import { SectionTitle } from 'helpers/definitions';
-import FormatHtml from "components/utils/FormatHtml";
-import {calculateExperience} from "../../helpers/utils";
+import { calculateExperience } from '../../helpers/utils';
+
+import Container from 'components/ui/Container';
+import Button from 'components/ui/Button';
+import List from 'components/ui/List';
+import TitleSection from 'components/ui/TitleSection';
+import * as Styled from './styles';
 
 interface SectionHeroBanner extends SectionTitle {
-  content: string;
+  summary: string;
   linkTo: string;
   linkText: string;
   dataOfJoining: string;
-}
-
-interface SummaryBanner {
-  node: {
-    html: React.ReactNode;
-  };
+  about: [string];
 }
 
 const HeroBanner: React.FC = () => {
-  const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
+  const { markdownRemark } = useStaticQuery(graphql`
     query {
       markdownRemark(frontmatter: { category: { eq: "hero section" } }) {
         frontmatter {
           title
           subtitle
-          content
+          summary
           linkTo
           linkText
           dataOfJoining
-        }
-      }
-      allMarkdownRemark(
-        filter: { frontmatter: { category: { eq: "hero section" } } }
-      ) {
-        edges {
-          node {
-            html
-          }
+          about
         }
       }
     }
   `);
 
   const heroBanner: SectionHeroBanner = markdownRemark.frontmatter;
-  const html: SummaryBanner = allMarkdownRemark.edges[0];
-  heroBanner.content = heroBanner.content.replace("{{experience}}", `${calculateExperience(heroBanner.dataOfJoining)}`)
+  const experience = calculateExperience(heroBanner.dataOfJoining);
+  heroBanner.summary = heroBanner.summary.replace('{{experience}}', experience);
 
   return (
-    <Banner
-      title={heroBanner.title}
-      subtitle={heroBanner.subtitle}
-      content={
-        <>
-          <FormatHtml className="" content={heroBanner.content} />
-          <br/>
-          <FormatHtml className="styled-list" content={html.node.html} />
-        </>
-      }
-      linkTo={heroBanner.linkTo}
-      linkText={heroBanner.linkText}
-    />
+    <Styled.Banner>
+      <Container section>
+        <TitleSection title={heroBanner.title} subtitle={heroBanner.subtitle} />
+        <Styled.Content>{heroBanner.summary}</Styled.Content>
+        <List items={heroBanner.about} />
+        <Link to={heroBanner.linkTo}>
+          <Button primary>{heroBanner.linkText}</Button>
+        </Link>
+      </Container>
+    </Styled.Banner>
   );
 };
 
