@@ -8,6 +8,7 @@ import Container from 'components/ui/Container';
 import Button from 'components/ui/Button';
 import List from 'components/ui/List';
 import TitleSection from 'components/ui/TitleSection';
+import Tags from 'components/ui/Tags';
 import * as Styled from './styles';
 
 interface SectionHeroBanner extends SectionTitle {
@@ -16,6 +17,7 @@ interface SectionHeroBanner extends SectionTitle {
   linkText: string;
   dataOfJoining: string;
   about: [string];
+  skills: [string];
 }
 
 const HeroBanner: React.FC = () => {
@@ -30,6 +32,7 @@ const HeroBanner: React.FC = () => {
           linkText
           dataOfJoining
           about
+          skills
         }
       }
     }
@@ -44,6 +47,7 @@ const HeroBanner: React.FC = () => {
       <Container section>
         <TitleSection title={heroBanner.title} subtitle={heroBanner.subtitle} />
         <Styled.Content>{heroBanner.summary}</Styled.Content>
+        <Tags items={heroBanner.skills}></Tags>
         <List items={heroBanner.about} />
         <Link to={heroBanner.linkTo}>
           <Button primary>{heroBanner.linkText}</Button>

@@ -14,7 +14,7 @@ interface Props {
 
 const Timeline: React.FC<Props> = ({ title, subtitle, subtitle2, content, startDate, endDate, main }) => (
   <Styled.Timeline>
-    {main && <Styled.Point />}
+    {!main && <Styled.Point />}
     <Styled.Details>
       <Styled.Date>
         {startDate} - {endDate}

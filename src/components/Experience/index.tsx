@@ -4,14 +4,14 @@ import { useStaticQuery, graphql } from 'gatsby';
 import Timeline from 'components/ui/Timeline';
 import Container from 'components/ui/Container';
 import TitleSection from 'components/ui/TitleSection';
-import FormatHtml from 'components/utils/FormatHtml';
+import List from 'components/ui/List';
+import Tags from 'components/ui/Tags';
 
 import { SectionTitle } from 'helpers/definitions';
 
 interface Experience {
   node: {
     id: string;
-    html: React.ReactNode;
     frontmatter: {
       company: string;
       group: string;
@@ -19,9 +19,28 @@ interface Experience {
       startDate: string;
       endDate: string;
       main: boolean;
+      skills: [string];
+      activities: [string];
+      kpis: [string];
     };
   };
 }
+
+const TimelineContent = (props: { activities: [string]; kpis: [string]; skills: [string] }) => {
+  return (
+    <>
+      <Tags items={props.skills}></Tags>
+      <span className="font-bold text-sm">Activities</span>
+      <List items={props.activities} />
+      {props.kpis.length > 0 && (
+        <>
+          <span className="font-bold text-sm">KPIs</span>
+          <List items={props.kpis} />
+        </>
+      )}
+    </>
+  );
+};
 
 const Experience: React.FC = () => {
   const { markdownRemark, allMarkdownRemark } = useStaticQuery(graphql`
@@ -39,7 +58,6 @@ const Experience: React.FC = () => {
         edges {
           node {
             id
-            html
             frontmatter {
               company
               group
@@ -47,6 +65,9 @@ const Experience: React.FC = () => {
               startDate
               endDate
               main
+              skills
+              activities
+              kpis
             }
           }
         }
@@ -64,8 +85,7 @@ const Experience: React.FC = () => {
       {experiences.map((item) => {
         const {
           id,
-          html,
-          frontmatter: { company, group, position, startDate, endDate, main },
+          frontmatter: { company, group, position, startDate, endDate, main, skills, activities, kpis },
         } = item.node;
 
         return (
@@ -74,7 +94,7 @@ const Experience: React.FC = () => {
             title={company}
             subtitle={group}
             subtitle2={position}
-            content={<FormatHtml className="styled-list" content={html} />}
+            content={<TimelineContent activities={activities} kpis={kpis} skills={skills} />}
             startDate={startDate}
             endDate={endDate}
             main={main}

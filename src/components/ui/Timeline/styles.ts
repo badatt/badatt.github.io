@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import tw from 'tailwind.macro';
 
 export const Timeline = styled.div`
-  ${tw`flex flex-col sm:flex-row w-full p-4 relative border-l border-indigo-200`};
+  ${tw`flex flex-col sm:flex-col w-full p-4 relative border-l border-indigo-200`};
 
   &:last-child {
     ${tw`pb-0`};
@@ -14,7 +14,7 @@ export const Details = styled.div`
 `;
 
 export const Content = styled.div`
-  ${tw`w-full sm:w-2/3 mt-4 sm:mt-0`};
+  ${tw`w-full sm:w mt-4 sm:mt-0`};
 `;
 
 export const Title = styled.div`

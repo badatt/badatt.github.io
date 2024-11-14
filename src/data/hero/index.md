@@ -11,6 +11,13 @@ summary: |
 linkTo: '/resume/'
 linkText: 'View my profile'
 dataOfJoining: '2014-01-23'
+skills:
+    - Java/J2EE
+    - Amazon Web Services
+    - Springboot
+    - Postgresql
+    - DevOps
+    - ReactJs
 about:
     - I have developed extensive expertise in architecting, designing, 
      developing and deploying object-oriented and web-based enterprise applications using Java/J2EE technologies.
