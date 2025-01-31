@@ -4,7 +4,7 @@ company: 'EMIS Health India (Optum - UHG)'
 group: 'Research & Meds Assistant'
 position: 'SSDE / Cloud Developer / DevOps'
 startDate: 'Apr 2022'
-endDate: 'Present'
+endDate: 'Jan 2025'
 main: true
 skills:
     - Java/J2EE

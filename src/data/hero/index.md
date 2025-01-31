@@ -1,7 +1,7 @@
 ---
 category: 'hero section'
-title: 'Full-stack Java Developer . Senior SDE . Senior Consultant'
-subtitle: 'EMIS Health'
+title: 'Lead Full-stack Engineer . Architect . Sr Analyst'
+subtitle: 'PepsiCo'
 summary: |
     I am a passionate software engineer with over {{experience}} years of experience in developing resilient, highly available, 
     cost effective, and measurable software systems. As an AWS cloud specialist, I excel in architecting, developing, and deploying 
@@ -13,11 +13,11 @@ linkText: 'View my profile'
 dataOfJoining: '2014-01-23'
 skills:
     - Java/J2EE
-    - Amazon Web Services
     - Springboot
+    - ReactJs
     - Postgresql
     - DevOps
-    - ReactJs
+    - Amazon Web Services
 about:
     - I have developed extensive expertise in architecting, designing, 
      developing and deploying object-oriented and web-based enterprise applications using Java/J2EE technologies.

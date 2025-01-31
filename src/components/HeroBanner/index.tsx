@@ -47,8 +47,8 @@ const HeroBanner: React.FC = () => {
       <Container section>
         <TitleSection title={heroBanner.title} subtitle={heroBanner.subtitle} />
         <Styled.Content>{heroBanner.summary}</Styled.Content>
-        <Tags items={heroBanner.skills}></Tags>
         <List items={heroBanner.about} />
+        <Tags items={heroBanner.skills}></Tags>
         <Link to={heroBanner.linkTo}>
           <Button primary>{heroBanner.linkText}</Button>
         </Link>

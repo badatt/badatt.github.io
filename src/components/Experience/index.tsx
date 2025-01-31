@@ -8,6 +8,7 @@ import List from 'components/ui/List';
 import Tags from 'components/ui/Tags';
 
 import { SectionTitle } from 'helpers/definitions';
+import { SkillsUsed, TC } from './styles';
 
 interface Experience {
   node: {
@@ -28,17 +29,23 @@ interface Experience {
 
 const TimelineContent = (props: { activities: [string]; kpis: [string]; skills: [string] }) => {
   return (
-    <>
-      <Tags items={props.skills}></Tags>
-      <span className="font-bold text-sm">Activities</span>
-      <List items={props.activities} />
+    <TC>
+      {props.activities.length > 0 && (
+        <>
+          <span className="font-bold text-sm">Activities</span>
+          <List items={props.activities} />
+        </>
+      )}
       {props.kpis.length > 0 && (
         <>
           <span className="font-bold text-sm">KPIs</span>
           <List items={props.kpis} />
         </>
       )}
-    </>
+      <SkillsUsed>
+        <Tags items={props.skills}></Tags>
+      </SkillsUsed>
+    </TC>
   );
 };
 
